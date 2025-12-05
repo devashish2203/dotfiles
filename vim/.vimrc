@@ -3,6 +3,7 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.fzf
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -11,6 +12,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
@@ -63,6 +66,7 @@ set shiftround    " Round indent to multiple of 'shiftwidth'
 set wrap
 set sidescroll=5
 "set listchars+=precedes:<,extends:>
+set colorcolumn=88
 
 " Scroll
 set scrolloff=8 " Scrolling keeps 8 lines at top/bottom
@@ -159,7 +163,7 @@ imap <C-Left> <esc>bi
 
 
 autocmd FileType  c,cpp,h,hpp,cxx   setlocal cc=81 | setlocal shiftwidth=2 | setlocal tabstop=2 | setlocal softtabstop=2 | set noic
-autocmd FileType  python            setlocal cc=81
+autocmd FileType  python            setlocal cc=88
 autocmd FileType  xml,json          setlocal foldmethod=indent | setlocal cc=81 | setlocal shiftwidth=2 | setlocal tabstop=2 | setlocal softtabstop=2 | set noic
 
 function! Vimdiff()
@@ -188,4 +192,3 @@ function! Vimdiff()
     diffthis
 endfunction
 autocmd FileType diff nnoremap <silent> <leader>vd :call Vimdiff()<CR>
-
