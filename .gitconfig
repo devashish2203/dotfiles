@@ -1,0 +1,45 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+name = Devashish Chandra
+email = devashish2203@users.noreply.github.com
+[alias]
+olog = log --oneline
+sb="!switch_branch_fzf() { git branch | fzf | xargs git checkout; }; switch_branch_fzf"
+co = checkout
+cob = checkout -b
+puhead = push origin HEAD
+pom = pull origin main
+[pull]
+ff = only
+[column]
+ui = auto
+[branch]
+sort = -committerdate
+[tag]
+sort = version:refname
+[init]
+defaultBranch = main
+[diff]
+algorithm = histogram
+colorMoved = plain
+mnemonicPrefix = true
+renames = true
+[push]
+default = simple
+autoSetupRemote = true
+followTags = true
+[fetch]
+prune = true
+pruneTags = true
+all = true
+[help]
+autocorrect = prompt
+[rerere]
+enabled = true
+autoupdate = true
+[rebase]
+autoSquash = true
+autoStash = true
+updateRefs = true
+
