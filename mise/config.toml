@@ -1,0 +1,6 @@
+[tools]
+fd = "latest"
+fzf = "latest"
+neovim = "latest"
+usage = "latest"
+starship = "latest"

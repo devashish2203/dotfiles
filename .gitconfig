@@ -1,0 +1,6 @@
+# This is Git's per-user configuration file.
+[core]
+editor = nvim
+[user]	
+name = Devashish Chandra
+email = devashish2203@users.noreply.github.com
