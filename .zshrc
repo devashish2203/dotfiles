@@ -55,6 +55,7 @@ source ~/.config/zsh/custom/fzf-tab/fzf-tab.plugin.zsh
 # Completions
 source ~/.config/zsh/custom/starship-completion.zsh
 source ~/.config/zsh/custom/mise-completion
-
+source ~/.config/zsh/custom/docker-completion.zsh
 # Aliases
 source ~/.config/zsh/custom/aliases.zsh
+

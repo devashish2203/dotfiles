@@ -121,7 +121,16 @@ end)
 -- Enable break indent
 vim.o.breakindent = true
 
+-- Set Indent
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.smarttab = true
+vim.opt.autoindent = true
+vim.opt.expandtab = true
+
 -- Save undo history
+
 vim.o.undofile = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
