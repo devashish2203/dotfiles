@@ -6,4 +6,5 @@ usage = "latest"
 starship = "latest"
 docker-cli = "latest"
 docker-compose = "latest"
+uv = "latest"
 
