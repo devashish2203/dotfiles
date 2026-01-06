@@ -8,3 +8,7 @@ docker-cli = "latest"
 docker-compose = "latest"
 uv = "latest"
 
+[env]
+DOCKER_DEFAULT_PLATFORM='linux/arm64'
+
+

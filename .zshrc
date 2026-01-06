@@ -27,7 +27,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
 zstyle ':completion:*' menu no
 # preview directory's content with eza when completing cd
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -1 -G $realpath'
 # custom fzf flags
 # NOTE: fzf-tab does not follow FZF_DEFAULT_OPTS by default
 zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept
@@ -41,21 +41,21 @@ setopt appendhistory autocd extendedglob nomatch
 
 
 
-EDITOR=nvim
-PATH=$PATH:$HOME/tools/bin
 eval "$(/Users/devashish.chandra/.local/bin/mise activate zsh)"
-FZF_DEFAULT_COMMAND='fd --type f'
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 eval "$(starship init zsh)"
 # Plugins
 source ~/.config/zsh/custom/fzf-tab/fzf-tab.plugin.zsh
 
+# Environment Vars
+source ~/.config/zsh/custom/env.zsh
 
 # Completions
 source ~/.config/zsh/custom/starship-completion.zsh
 source ~/.config/zsh/custom/mise-completion
 source ~/.config/zsh/custom/docker-completion.zsh
+source ~/.config/zsh/custom/uv-completion.zsh
 # Aliases
 source ~/.config/zsh/custom/aliases.zsh
 
