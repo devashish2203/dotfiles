@@ -7,6 +7,8 @@ starship = "latest"
 docker-cli = "latest"
 docker-compose = "latest"
 uv = "latest"
+awscli = { version = "latest", symlink_bins = "true" }
+aws-sso = "latest"
 
 [env]
 DOCKER_DEFAULT_PLATFORM='linux/arm64'

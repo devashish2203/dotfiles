@@ -1,3 +1,6 @@
 # Configuration of tools that should not be tracked in git
 raycast/**
 jgit/**
+
+AWSVPNClient/**
+aws-sso/**

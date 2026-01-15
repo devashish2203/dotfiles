@@ -33,6 +33,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -1 -G $realpath'
 zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2
 autoload -Uz compinit
 compinit
+autoload -Uz +X bashcompinit && bashcompinit
 # End of lines added by compinstall
 
 HISTSIZE=10000
@@ -56,6 +57,8 @@ source ~/.config/zsh/custom/starship-completion.zsh
 source ~/.config/zsh/custom/mise-completion
 source ~/.config/zsh/custom/docker-completion.zsh
 source ~/.config/zsh/custom/uv-completion.zsh
+source ~/.config/zsh/custom/aws-sso-completion.sh
+complete -C $(mise which aws_completer) aws
 # Aliases
 source ~/.config/zsh/custom/aliases.zsh
 
