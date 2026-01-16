@@ -36,9 +36,10 @@ compinit
 autoload -Uz +X bashcompinit && bashcompinit
 # End of lines added by compinstall
 
+HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt appendhistory autocd extendedglob nomatch
+setopt sharehistory autocd extendedglob nomatch
 
 
 
@@ -59,6 +60,10 @@ source ~/.config/zsh/custom/docker-completion.zsh
 source ~/.config/zsh/custom/uv-completion.zsh
 source ~/.config/zsh/custom/aws-sso-completion.sh
 complete -C $(mise which aws_completer) aws
-# Aliases
+
+# Aliases and functions
 source ~/.config/zsh/custom/aliases.zsh
 
+# Datahub Specific
+source ~/.config/zsh/datahub/aws.sh
+source ~/.config/zsh/datahub/datahub.sh

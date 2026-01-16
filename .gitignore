@@ -4,3 +4,6 @@ jgit/**
 
 AWSVPNClient/**
 aws-sso/**
+
+gcloud/**
+zsh/datahub/**

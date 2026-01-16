@@ -5,7 +5,10 @@ $directory\
 [](bg:yellow fg:peach)\
 $git_branch\
 $git_status\
-[](fg:yellow bg:green)\
+[](fg:yellow bg:lavender)\
+$aws\
+$kubernetes\
+[](fg:lavender bg:green)\
 $golang\
 $nodejs\
 $java\
@@ -65,11 +68,16 @@ style = "bg:yellow"
 format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
 untracked = '?\($count\)'
 
+[aws]
+symbol="☁️"
+style = "bg:lavender fg:#2e3440 bold"
+format = '[$symbol($profile)]($style)'
+
 [kubernetes]
 symbol = "☸ "
-style = "bg:#81a1c1 fg:#2e3440 bold"
+style = "bg:lavender fg:#2e3440 bold"
 format = '[ $symbol $context ]($style)'
-disabled = true
+disabled = false
 
 [nodejs]
 symbol = ""
