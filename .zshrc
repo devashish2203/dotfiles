@@ -41,6 +41,19 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt sharehistory autocd extendedglob nomatch
 
+# Setup vim bindings
+EDITOR="nvim"
+# Load the built-in Zsh widget
+autoload -Uz edit-command-line
+
+# Create a new named widget for use in the key binding
+zle -N edit-command-line
+
+# Bind 'v' in vi command mode (vicmd) to the widget
+bindkey -M vicmd v edit-command-line
+
+# Optional: Enable full vi-mode bindings in the Zsh line editor
+bindkey -v
 
 
 eval "$(/Users/devashish.chandra/.local/bin/mise activate zsh)"
@@ -60,7 +73,9 @@ source ~/.config/zsh/custom/docker-completion.zsh
 source ~/.config/zsh/custom/uv-completion.zsh
 source ~/.config/zsh/custom/aws-sso-completion.sh
 complete -C $(mise which aws_completer) aws
-
+source $(mise where gcloud)/completion.zsh.inc
+eval "$(op completion zsh)"; compdef _op op
+source ~/.config/zsh/custom/gh-completion.zsh
 # Aliases and functions
 source ~/.config/zsh/custom/aliases.zsh
 

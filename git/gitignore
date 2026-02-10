@@ -60,3 +60,8 @@ $RECYCLE.BIN/
 
 # Mise
 .mise.local.toml
+
+
+# Other tools
+cagent/**
+op/**

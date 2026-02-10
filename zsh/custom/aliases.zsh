@@ -11,7 +11,9 @@ alias mv='mv -v'
 alias mkdir='mkdir -p -v'
 alias rmdir='rmdir -p -v'
 
-
+# Git
+alias gprune-dry='git branch --merged $(git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@") | grep -v "^\*\|$(git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@")"'
+alias gprune='git branch --merged $(git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@") | grep -v "^\*\|$(git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@")" | xargs -r git branch -d'
 
 # Select Virtual Environments
 function avenv() {
@@ -43,4 +45,8 @@ _fzf_compgen_path() {
 # Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+
+function loadEnv() {
+  export $(cat $1 | xargs)
 }

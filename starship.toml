@@ -1,12 +1,13 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
+[](fg:mauve bg:mauve )\
+$os\
 $directory\
-[](bg:yellow fg:peach)\
+[](bg:yellow fg:mauve)\
 $git_branch\
 $git_status\
 [](fg:yellow bg:lavender)\
-$aws\
 $kubernetes\
 [](fg:lavender bg:green)\
 $golang\
@@ -22,11 +23,9 @@ $character"""
 right_format = """
 $cmd_duration\
 [](lavender)\
-$time\
+$aws\
 [](fg:lavender bg:sapphire )\
 $username\
-[](fg:mauve bg:mauve )\
-$os\
 [ ](mauve)"""
 
 
@@ -40,13 +39,13 @@ style = "bg:mauve fg:crust"
 Macos = "󰀵"
 
 [username]
-show_always = true
+show_always = false
 style_user = "bg:sapphire fg:surface1"
 style_root = "bg:sapphire fg:surface1"
 format = '[ $user]($style)'
 
 [directory]
-style = "bg:peach fg:crust"
+style = "bg:mauve fg:crust"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -72,6 +71,11 @@ untracked = '?\($count\)'
 symbol="☁️"
 style = "bg:lavender fg:#2e3440 bold"
 format = '[$symbol($profile)]($style)'
+
+[gcloud]
+symbol=""
+style = "bg:lavender fg:#2e3440 bold"
+format = '[$symbol ($active)]($style)'
 
 [kubernetes]
 symbol = "☸ "
