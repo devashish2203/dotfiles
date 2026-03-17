@@ -12,6 +12,8 @@ co = checkout
 cob = checkout -b
 puhead = push origin HEAD
 pom = pull origin main
+short-sha7 = rev-parse --short=7
+poh = "!git pull origin $(git symbolic-ref --short refs/remotes/origin/HEAD | sed 's@^origin/@@')"
 [pull]
 ff = only
 [column]
@@ -45,3 +47,5 @@ autoSquash = true
 autoStash = true
 updateRefs = true
 
+# [pager]
+# diff = diffnav

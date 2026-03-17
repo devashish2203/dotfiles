@@ -76,6 +76,7 @@ complete -C $(mise which aws_completer) aws
 source $(mise where gcloud)/completion.zsh.inc
 eval "$(op completion zsh)"; compdef _op op
 source ~/.config/zsh/custom/gh-completion.zsh
+source ~/.config/zsh/custom/wt-completion.zsh
 # Aliases and functions
 source ~/.config/zsh/custom/aliases.zsh
 

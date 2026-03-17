@@ -6,3 +6,4 @@ AWSVPNClient/**
 aws-sso/**
 gcloud/**
 gh/**
+observe.yaml

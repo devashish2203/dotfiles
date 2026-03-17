@@ -1,0 +1,16 @@
+worktree-path = "/Users/devashish.chandra/datahub/repos/worktrees/{{ repo }}/ {{ branch | sanitize }}"
+
+[list]
+summary = false
+
+[commit]
+stage = "tracked"
+
+[post-create]
+copy-mise = "[ -f {{ primary_worktree_path }}/.mise.local.toml ] && cp {{ primary_worktree_path }}/.mise.local.toml .mise.local.toml || true"
+copy-vscode = "[ -d {{ primary_worktree_path }}/.vscode ] && cp -r {{ primary_worktree_path }}/.vscode .vscode || true"
+copy-claude = "[ -d {{ primary_worktree_path }}/.claude ] && cp -r {{ primary_worktree_path }}/.claude .claude || true"
+mise-trust = "if [ -f .mise.toml ] || [ -f .tool-versions ]; then mise trust; fi"
+
+[pre-remove]
+save-plans = "[ -d .claude/plans ] && { mkdir -p {{ primary_worktree_path }}/.claude/plans && cp -rn .claude/plans/. {{ primary_worktree_path }}/.claude/plans/; } || true"

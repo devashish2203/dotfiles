@@ -12,8 +12,30 @@ alias mkdir='mkdir -p -v'
 alias rmdir='rmdir -p -v'
 
 # Git
-alias gprune-dry='git branch --merged $(git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@") | grep -v "^\*\|$(git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@")"'
-alias gprune='git branch --merged $(git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@") | grep -v "^\*\|$(git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@")" | xargs -r git branch -d'
+#alias gprune-dry="git branch -vv | grep ': gone]' | awk '{print \$1}' | xargs -r echo git branch -D"
+#alias gprune="git branch -vv | grep ': gone]' | awk '{print \$1}' | xargs -r git branch -D"
+
+alias ds='gh dash'
+
+# Delete all local git branches except a protected branch
+# Usage: git-clean-branches [<exclude>] [-y]
+#   <exclude>  Branch to protect from deletion (default: main)
+#   -y         Skip confirmation prompts
+function gprune() {
+  local force=1
+
+  if [[ "$1" == "-d" ]]; then
+    force=0
+  fi
+
+  if [[ $force -eq 1 ]]; then
+    git branch | grep -v "main\|master\|releases/\|hotfix" | xargs -IX git branch -D X
+  else
+    git branch | grep -v "main\|master\|releases/\|hotfix" | xargs -IX echo git branch -D X
+  fi
+}
+
+alias gprune-dry='gprune -d' 
 
 # Select Virtual Environments
 function avenv() {
@@ -50,3 +72,5 @@ _fzf_compgen_dir() {
 function loadEnv() {
   export $(cat $1 | xargs)
 }
+
+alias gitroot='cd "$(git rev-parse --show-toplevel)"'
