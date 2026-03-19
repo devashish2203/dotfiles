@@ -5,6 +5,7 @@ format = """
 $os\
 $directory\
 [](bg:yellow fg:mauve)\
+${custom.worktree}\
 $git_branch\
 $git_status\
 [](fg:yellow bg:lavender)\
@@ -56,6 +57,12 @@ truncation_symbol = "…/"
 "Music" = "󰝚 "
 "Pictures" = " "
 "Developer" = "󰲋 "
+
+[custom.worktree]
+command = 'echo "󰓁"'
+when = 'git rev-parse --git-dir 2>/dev/null | grep -q "\.git/worktrees/"'
+style = "fg:crust bg:yellow"
+format = '[ $output ](fg:crust bg:yellow)'
 
 [git_branch]
 symbol = ""
