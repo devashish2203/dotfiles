@@ -1,4 +1,4 @@
-worktree-path = "/Users/devashish.chandra/datahub/repos/worktrees/{{ repo }}/{{ branch | sanitize }}"
+worktree-path = "~/datahub/repos/worktrees/{{ repo }}/{{ branch | sanitize }}"
 
 [list]
 summary = false

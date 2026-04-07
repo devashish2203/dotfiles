@@ -14,7 +14,7 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' preserve-prefix '//[^/]##/'
 zstyle ':completion:*' prompt '[%e] '
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle :compinstall filename '/Users/devashish.chandra/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 
 # From fzf-tab
 # disable sort when completing `git checkout`
@@ -56,7 +56,7 @@ bindkey -M vicmd v edit-command-line
 bindkey -v
 
 
-eval "$(/Users/devashish.chandra/.local/bin/mise activate zsh)"
+eval "$(~/.local/bin/mise activate zsh)"
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 eval "$(starship init zsh)"
