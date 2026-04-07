@@ -46,10 +46,12 @@ Development tool version manager (formerly rtx). Manages runtime versions for mu
 **Managed Tools:**
 - Core: fd, fzf, neovim, starship, usage
 - Containers: docker-cli, docker-compose
+- Languages: go
 - Python: uv
 - Cloud: awscli, gcloud, aws-sso
-- Kubernetes: kubectl, k9s
-- Development: github-cli, claude-code
+- Kubernetes: kubectl, k9s, helm
+- Development: github-cli, claude-code, delta, pre-commit
+- Security: 1password-cli, sops
 
 **Important Config:**
 - AWS CLI symlink bins enabled
@@ -75,7 +77,6 @@ The following files need to be symlinked from this repository to their expected 
 ```bash
 ln -s ~/.config/.zshrc ~/.zshrc
 ln -s ~/.config/.vimrc ~/.vimrc
-ln -s ~/.config/starship.toml ~/.config/starship.toml
 ln -s ~/.config/git/.gitconfig ~/.gitconfig
 ```
 
@@ -93,8 +94,11 @@ The following directories contain sensitive or machine-specific data and are exc
 
 ## Setup
 
-1. Clone this repository to `~/.config`
-2. Install mise: `curl https://mise.run | sh`
-3. Run `mise install` to install all tools
-4. Create necessary symlinks (see above)
-5. Restart your shell or source `~/.zshrc`
+- Clone this repository to `~/.config`
+- Install mise: `curl https://mise.run | sh`
+- Run `mise install` to install all tools
+- Create necessary symlinks (see above)
+- Restart your shell or source `~/.zshrc`
+
+- It is recommended that the completion scripts are regenerated on your system for the various tools for maximum compatibility
+> NOTE: Some files may have hardcoded system paths to /Users/devashish.chandra or other system paths. If something does not work as intended check and update paths.
