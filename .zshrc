@@ -77,9 +77,11 @@ source $(mise where gcloud)/completion.zsh.inc
 eval "$(op completion zsh)"; compdef _op op
 source ~/.config/zsh/custom/gh-completion.zsh
 source ~/.config/zsh/custom/wt-completion.zsh
+source ~/.config/zsh/datahub/datahub-apps-completion.sh
 # Aliases and functions
 source ~/.config/zsh/custom/aliases.zsh
 
 # Datahub Specific
 source ~/.config/zsh/datahub/aws.sh
 source ~/.config/zsh/datahub/datahub.sh
+

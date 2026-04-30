@@ -7,3 +7,4 @@ aws-sso/**
 gcloud/**
 gh/**
 observe.yaml
+argocd/**

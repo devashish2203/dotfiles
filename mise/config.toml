@@ -23,6 +23,9 @@ sops = "3.12.1"
 go = "latest"
 delta = "0.18.2"
 pre-commit = "4.5.1"
+argocd = "latest"
+cosign = "3.0.6"
+node = "22"
 
 [env]
 DOCKER_DEFAULT_PLATFORM='linux/arm64'
