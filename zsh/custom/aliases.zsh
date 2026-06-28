@@ -15,8 +15,6 @@ alias rmdir='rmdir -p -v'
 #alias gprune-dry="git branch -vv | grep ': gone]' | awk '{print \$1}' | xargs -r echo git branch -D"
 #alias gprune="git branch -vv | grep ': gone]' | awk '{print \$1}' | xargs -r git branch -D"
 
-alias ds='gh dash'
-
 # Delete all local git branches except a protected branch
 # Usage: git-clean-branches [<exclude>] [-y]
 #   <exclude>  Branch to protect from deletion (default: main)

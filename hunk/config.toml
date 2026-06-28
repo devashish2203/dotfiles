@@ -1,0 +1,6 @@
+theme = "aurora-x"
+line_numbers = true
+menu_bar = true
+agent_notes = true
+transparent_background = true
+exclude_untracked = false

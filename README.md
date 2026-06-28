@@ -44,14 +44,14 @@ Modern GPU-accelerated terminal emulator configuration.
 Development tool version manager (formerly rtx). Manages runtime versions for multiple languages and CLI tools.
 
 **Managed Tools:**
-- Core: fd, fzf, neovim, starship, usage
+- Core: fd, fzf, neovim, starship, usage, hl (log viewer), hunk (diff tool)
 - Containers: docker-cli, docker-compose
-- Languages: go
+- Languages: go, node
 - Python: uv
 - Cloud: awscli, gcloud, aws-sso
-- Kubernetes: kubectl, k9s, helm
-- Development: github-cli, claude-code, delta, pre-commit
-- Security: 1password-cli, sops
+- Kubernetes: kubectl, k9s, helm, argocd, kubectx, kubens
+- Development: github-cli, claude-code, pre-commit, herdr, acryl-datahub (pipx)
+- Security: 1password-cli, sops, cosign
 
 **Important Config:**
 - AWS CLI symlink bins enabled
@@ -69,6 +69,18 @@ Google Cloud SDK configuration directory.
 
 ### aws-sso
 AWS SSO CLI configuration for managing multiple AWS accounts and profiles.
+
+### gh-dash
+Terminal dashboard for GitHub PRs and notifications. Configures custom PR sections (my open PRs, approved-to-merge, needs review, failing checks, team review), notification views, repo paths for `acryldata`/`datahub-project`, and uses `diffnav` as its diff pager.
+
+### diffnav
+TUI diff viewer used as a pager (e.g. by gh-dash and git). Configured for side-by-side view with diff stats, nerd-font icons, and a 30-column file tree.
+
+### herdr
+Terminal multiplexer / agent runner. Only `herdr/config.toml` is tracked (runtime state, logs, and plugins are gitignored). Uses the Catppuccin theme with auto light/dark switching and defines worktrunk plugin keybindings (`prefix+shift+g` to switch/create a worktree, `prefix+shift+d` to remove one).
+
+### worktrunk
+Git worktree manager. Worktrees are created under `~/datahub/repos/worktrees/`. Post-create hooks copy machine-local files into new worktrees (`.mise.local.toml`, `.netrc`, `.vscode`, `.claude`) and trust mise; a pre-remove hook preserves `.claude/plans` back to the primary worktree.
 
 ## Files Requiring Symlinks
 
@@ -91,6 +103,11 @@ The following directories contain sensitive or machine-specific data and are exc
 - `aws-sso/` - AWS SSO session data
 - `gcloud/` - Google Cloud credentials and state
 - `gh/` - GitHub CLI authentication tokens
+- `argocd/` - ArgoCD CLI credentials and context
+- `observe.yaml` - Observe CLI configuration
+- `mise/config.local.toml` - Machine-local mise tool overrides
+- `herdr/` - herdr runtime state, logs, and plugins (only `herdr/config.toml` is tracked)
+- `hunk/state.json` - hunk local state
 
 ## Setup
 
