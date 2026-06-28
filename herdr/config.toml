@@ -21,3 +21,17 @@ switch_ascii_input_source_in_prefix = true
 [theme]
 name = "catppuccin"
 auto_switch = true
+
+
+# Worktrunk plugin key bindings
+[[keys.command]]
+key = "prefix+shift+g"
+type = "plugin_action"
+command = "worktrunk.open"
+description = "Worktree: switch / create"
+
+[[keys.command]]
+key = "prefix+shift+d"
+type = "plugin_action"
+command = "worktrunk.remove"
+description = "Worktree: remove"

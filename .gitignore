@@ -9,6 +9,6 @@ gh/**
 observe.yaml
 argocd/**
 mise/config.local.toml
-herdr/session.json
-herdr/plugins.json
+herdr/**
+!herdr/config.toml
 hunk/state.json
