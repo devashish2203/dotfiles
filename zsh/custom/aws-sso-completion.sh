@@ -1,4 +1,3 @@
-# BEGIN_AWS_SSO_CLI
 
 # AWS SSO requires `bashcompinit` which needs to be enabled once and
 # only once in your shell.  Hence we do not include the two lines:
@@ -12,7 +11,7 @@
 
 __aws_sso_profile_complete() {
      local _args=${AWS_SSO_HELPER_ARGS:- -L error}
-    _multi_parts : "($(/Users/devashish.chandra/.local/share/mise/installs/aws-sso/2.1.0/aws-sso ${=_args} list --csv Profile))"
+    _multi_parts : "($(/Users/devashish.chandra/.local/share/mise/installs/aws-sso/latest/aws-sso ${=_args} list --csv Profile))"
 }
 
 aws-sso-profile() {
@@ -61,9 +60,9 @@ aws-sso-profile() {
 
     # Build and execute the eval command with optional SSO flag
     if [ -n "$_sso" ]; then
-        eval $(/Users/devashish.chandra/.local/share/mise/installs/aws-sso/2.1.0/aws-sso ${=_args} -S "$_sso" eval -p "$_profile")
+        eval $(/Users/devashish.chandra/.local/share/mise/installs/aws-sso/latest/aws-sso ${=_args} -S "$_sso" eval -p "$_profile")
     else
-        eval $(/Users/devashish.chandra/.local/share/mise/installs/aws-sso/2.1.0/aws-sso ${=_args} eval -p "$_profile")
+        eval $(/Users/devashish.chandra/.local/share/mise/installs/aws-sso/latest/aws-sso ${=_args} eval -p "$_profile")
     fi
     
     if [ "$AWS_SSO_PROFILE" != "$_profile" ]; then
@@ -77,10 +76,8 @@ aws-sso-clear() {
         echo "AWS_SSO_PROFILE is not set"
         return 1
     fi
-    eval $(/Users/devashish.chandra/.local/share/mise/installs/aws-sso/2.1.0/aws-sso ${=_args} eval -c)
+    eval $(/Users/devashish.chandra/.local/share/mise/installs/aws-sso/latest/aws-sso ${=_args} eval -c)
 }
 
 compdef __aws_sso_profile_complete aws-sso-profile
-complete -C /Users/devashish.chandra/.local/share/mise/installs/aws-sso/2.1.0/aws-sso aws-sso
-
-# END_AWS_SSO_CLI
+complete -C /Users/devashish.chandra/.local/share/mise/installs/aws-sso/latest/aws-sso aws-sso

@@ -26,6 +26,12 @@ pre-commit = "4.5.1"
 argocd = "latest"
 cosign = "3.0.6"
 node = "22"
+"pipx:acryl-datahub" = "latest"
+herdr = "latest"
+kubectx = "latest"
+kubens = "latest"
+"github:pamburus/hl" = "latest"
+hunk = "latest"
 
 [env]
 DOCKER_DEFAULT_PLATFORM='linux/arm64'

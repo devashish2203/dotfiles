@@ -36,6 +36,7 @@ function gprune() {
 }
 
 alias gprune-dry='gprune -d' 
+alias groot='cd $(git rev-parse --show-toplevel)'
 
 # Select Virtual Environments
 function avenv() {

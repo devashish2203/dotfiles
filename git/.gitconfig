@@ -2,6 +2,7 @@
 [core]
 editor = nvim
 excludesFile = ~/.gitignore
+	pager = hunk pager
 [user]	
 name = Devashish Chandra
 email = devashish2203@users.noreply.github.com

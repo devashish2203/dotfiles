@@ -3,7 +3,7 @@
 format = """
 [](fg:mauve bg:mauve )\
 $os\
-$directory\
+${custom.directory}\
 [](bg:yellow fg:mauve)\
 ${custom.worktree}\
 $git_branch\
@@ -45,18 +45,17 @@ style_user = "bg:sapphire fg:surface1"
 style_root = "bg:sapphire fg:surface1"
 format = '[ $user]($style)'
 
-[directory]
+[custom.directory]
+# Smart path segment (replaces the built-in $directory):
+#   git repo     -> <repo>/<relative path>, collapsed to <repo>/…/<last> past 3 levels
+#   git worktree -> the owning repo name, not the worktree dir
+#   non-git      -> home-contracted path, last 3 levels (icon substitutions handled in the script)
+# Logic lives in ~/.config/starship/directory.sh
+command = 'sh "$HOME/.config/starship/directory.sh"'
+when = true
+shell = ["sh"]
 style = "bg:mauve fg:crust"
-format = "[ $path ]($style)"
-truncation_length = 3
-truncation_symbol = "…/"
-
-[directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = "󰝚 "
-"Pictures" = " "
-"Developer" = "󰲋 "
+format = '[ $output ](fg:crust bg:mauve)'
 
 [custom.worktree]
 command = 'echo "󰓁"'

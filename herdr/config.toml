@@ -1,0 +1,13 @@
+[update]
+channel = "stable"
+version_check = true
+manifest_check = true
+
+[worktrees]
+directory = "~/datahub/repos/worktrees/"
+
+[ui.toast]
+delivery = "system"
+delay_seconds = 5
+
+

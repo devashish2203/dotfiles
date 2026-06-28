@@ -8,3 +8,7 @@ gcloud/**
 gh/**
 observe.yaml
 argocd/**
+mise/config.local.toml
+herdr/session.json
+herdr/plugins.json
+hunk/state.json
