@@ -86,3 +86,4 @@ source ~/.config/zsh/custom/kubectl_aliases.sh
 source ~/.config/zsh/datahub/aws.sh
 source ~/.config/zsh/datahub/datahub.sh
 
+
