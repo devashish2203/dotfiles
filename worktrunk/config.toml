@@ -15,3 +15,6 @@ mise-trust = "if [ -f mise.toml ] || [ -f .tool-versions ] || [ -f .mise.local.t
 
 [pre-remove]
 save-plans = "[ -d .claude/plans ] && { mkdir -p {{ primary_worktree_path }}/.claude/plans && cp -rn .claude/plans/. {{ primary_worktree_path }}/.claude/plans/; } || true"
+# Copy this worktree's Claude Code sessions into the primary repo's project dir before removal.
+# Claude stores sessions at ~/.claude/projects/<path with / and . replaced by ->/*.jsonl
+save-sessions = "SRC=\"$HOME/.claude/projects/$(echo '{{ worktree_path }}' | tr './' '-')\" && DEST=\"$HOME/.claude/projects/$(echo '{{ primary_worktree_path }}' | tr './' '-')\" && [ -d \"$SRC\" ] && { mkdir -p \"$DEST\" && cp -rn \"$SRC\"/. \"$DEST\"/; } || true"
