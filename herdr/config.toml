@@ -23,6 +23,9 @@ pane_history = false
 name = "catppuccin"
 auto_switch = true
 
+# Custom Keybindings
+[keys]
+close_workspace = "prefix+shift+d"
 
 # Worktrunk plugin key bindings
 [[keys.command]]
@@ -32,10 +35,11 @@ command = "worktrunk.open"
 description = "Worktree: switch / create"
 
 [[keys.command]]
-key = "prefix+shift+d"
+key = "prefix+option+d"
 type = "plugin_action"
 command = "worktrunk.remove"
 description = "Worktree: remove"
 
 [ui.sound]
 enabled = true
+
