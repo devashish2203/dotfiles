@@ -1,3 +1,4 @@
+onboarding = false
 [update]
 channel = "stable"
 version_check = true
@@ -12,7 +13,7 @@ delay_seconds = 5
 
 
 [ui]
-agent_panel_sort = "spaces"
+agent_panel_sort = "priority"
 show_agent_labels_on_pane_borders = true
 
 [experimental]
@@ -32,7 +33,13 @@ close_workspace = "prefix+shift+d"
 key = "prefix+shift+g"
 type = "plugin_action"
 command = "worktrunk.open"
-description = "Worktree: switch / create"
+description = "Worktree: switch / create from default branch"
+
+[[keys.command]]
+key = "prefix+shift+f"
+type = "plugin_action"
+command = "worktrunk.open-current"
+description = "Worktree: switch / create from current branch"
 
 [[keys.command]]
 key = "prefix+option+d"
@@ -42,4 +49,3 @@ description = "Worktree: remove"
 
 [ui.sound]
 enabled = true
-

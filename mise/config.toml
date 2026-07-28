@@ -32,6 +32,7 @@ kubens = "latest"
 "github:pamburus/hl" = "latest"
 hunk = "latest"
 yazi = "latest"
+shellcheck = "latest"
 
 [env]
 DOCKER_DEFAULT_PLATFORM='linux/arm64'

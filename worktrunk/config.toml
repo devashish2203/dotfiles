@@ -11,6 +11,7 @@ copy-mise = "DEST=$(pwd) && cd {{ primary_worktree_path }} && { git ls-files --o
 copy-netrc = "[ -f {{ primary_worktree_path }}/docker/snippets/uv/.netrc ] && cp -p {{ primary_worktree_path }}/docker/snippets/uv/.netrc docker/snippets/uv/.netrc || true"
 copy-vscode = "[ -d {{ primary_worktree_path }}/.vscode ] && cp -r {{ primary_worktree_path }}/.vscode .vscode || true"
 copy-claude = "[ -d {{ primary_worktree_path }}/.claude ] && cp -rn {{ primary_worktree_path }}/.claude/. .claude/ || true"
+copy-cursor = "[ -d {{ primary_worktree_path }}/.cursor ] && cp -rn {{ primary_worktree_path }}/.cursor/. .cursor/ || true"
 mise-trust = "if [ -f mise.toml ] || [ -f .tool-versions ] || [ -f .mise.local.toml ]; then mise trust; fi"
 
 [pre-remove]
