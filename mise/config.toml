@@ -18,7 +18,7 @@ url = "https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d
 """, version_list_url = "https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases/latest" }
 github-cli = "latest"
 1password-cli = "latest"
-helm = "4.1.1"
+helm = "4.2.4"
 sops = "3.12.1"
 go = "latest"
 pre-commit = "4.5.1"
@@ -33,6 +33,8 @@ kubens = "latest"
 hunk = "latest"
 yazi = "latest"
 shellcheck = "latest"
+argo = "2.12.13"
+"go:github.com/observeinc/observe" = "v0.3.0-rc2"
 
 [env]
 DOCKER_DEFAULT_PLATFORM='linux/arm64'

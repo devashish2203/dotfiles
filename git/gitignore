@@ -65,3 +65,6 @@ $RECYCLE.BIN/
 # Other tools
 cagent/**
 op/**
+
+# Claude Code plans written into repos
+**/.claude/plans/

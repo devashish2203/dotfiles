@@ -12,3 +12,6 @@ mise/config.local.toml
 herdr/**
 !herdr/config.toml
 hunk/state.json
+configstore/update-notifier-@docusaurus/core.json
+1Password/telemetry-enabled
+containers/auth.json
