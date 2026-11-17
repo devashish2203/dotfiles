@@ -16,3 +16,19 @@ configstore/update-notifier-@docusaurus/core.json
 1Password/telemetry-enabled
 containers/auth.json
 mlFlow/**
+
+# herdr-app: track only user config and custom mods
+herdr-app/*
+!herdr-app/settings.json
+!herdr-app/keys.json
+!herdr-app/themes/
+!herdr-app/scripts/
+!herdr-app/layouts/
+herdr-app/layouts/*
+!herdr-app/layouts/main-md.json
+!herdr-app/mods/
+herdr-app/mods/*
+!herdr-app/mods/markdown-panel/
+!herdr-app/mods/tabs-md/
+!herdr-app/mods/worktrunk/
+herdr-app/mods/**/gpui-kit.d.ts
