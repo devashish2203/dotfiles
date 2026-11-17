@@ -73,3 +73,16 @@ function loadEnv() {
 }
 
 alias gitroot='cd "$(git rev-parse --show-toplevel)"'
+
+# Clone GitHub repo into ~/datahub/repos/<owner>/<repo> and cd into it.
+# Accepts owner/repo, https://github.com/owner/repo(.git) or git@github.com:owner/repo(.git)
+function gclone() {
+  local slug=${1#https://github.com/}
+  slug=${slug#git@github.com:}
+  slug=${slug%.git}
+  slug=${slug%/}
+  [[ $slug == */* ]] || { echo "usage: gclone owner/repo|url" >&2; return 1; }
+  local dest="$HOME/datahub/repos/$slug"
+  [[ -d $dest ]] || gh repo clone "$slug" "$dest" || return
+  cd "$dest"
+}

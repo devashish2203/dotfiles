@@ -78,6 +78,7 @@ eval "$(op completion zsh)"; compdef _op op
 source ~/.config/zsh/custom/gh-completion.zsh
 source ~/.config/zsh/custom/wt-completion.zsh
 source ~/.config/zsh/datahub/datahub-apps-completion.sh
+source ~/.config/zsh/custom/depot-completion.zsh
 # Aliases and functions
 source ~/.config/zsh/custom/aliases.zsh
 source ~/.config/zsh/custom/kubectl_aliases.sh

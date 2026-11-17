@@ -49,3 +49,19 @@ description = "Worktree: remove"
 
 [ui.sound]
 enabled = true
+
+# Change repo: fzf popup to focus/create a workspace for a repo under ~/datahub/repos
+[[keys.command]]
+key = "prefix+,"
+type = "popup"
+command = "~/.config/herdr/scripts/change-repo.sh"
+description = "Change repo"
+width = "60%"
+height = "60%"
+
+# herdr-plus quick actions menu
+[[keys.command]]
+key = "prefix+shift+q"
+type = "plugin_action"
+command = "cloudmanic.herdr-plus.quick-actions"
+description = "herdr-plus: quick actions"
